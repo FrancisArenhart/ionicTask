@@ -26,29 +26,3 @@ var app = angular.module('starter', ['ionic', 'starter.controllers','starter.ser
 var controller = angular.module('starter.controllers', []);
 var services = angular.module('starter.services', []);
 var configs = angular.module('starter.configs', []);
-
-app.controller('mainCtrl', function ($scope, TaskService){
-  $scope.mensagem = 'Hello World!';
-  var mensagem2 = 'Lista de Tarefas:';
-  $scope.mostrarMensagem = function(){
-    return mensagem2;
-  };
-
-$scope.lista = TaskService.recuperarTarefas();
-
-});
-
-app.factory('TaskService', function() {
-  var lista = [
-    {nome:'Tarefa 1', pronto: false},
-    {nome:'Tarefa 2', pronto: true},
-    {nome:'Tarefa 3', pronto: false},
-    {nome:'Tarefa 4', pronto: true},
-    {nome:'Tarefa 5', pronto: false},
-  ];
-  this.recuperarTarefas = function() {
-    return lista;
-  }
-
-  return this;
-});
